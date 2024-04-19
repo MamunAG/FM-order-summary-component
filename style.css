@@ -2,13 +2,20 @@
     --Mobile: 375px;
     --Desktop: 1440px;
 
+    --cardWidthDesktop: 325px;
+    --cardHeightDesktop: 500px;
+
+    --cardWidthMobile: 300px;
+    --cardHeightMobile: 515px;
+
     --Paleblue: hsl(225, 100%, 94%);
     --Brightblue: hsl(245, 75%, 52%);
+    --Hoverblue: hsl(245, 73%, 64%);
     --Verypaleblue: hsl(225, 100%, 98%);
     --Desaturatedblue: hsl(224, 23%, 55%);
     --Darkblue: hsl(223, 47%, 23%);
 
-    --FontSize_paragraph: 16px;
+    --FontSize_paragraph: 13px;
 }
 
 *,
@@ -18,15 +25,175 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 html,
 body {
     height: 100%;
+    background-color: var(--Paleblue);
+    box-sizing: border-box;
+
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+.card {
+    width: var(--cardWidthDesktop);
+    height: var(--cardHeightDesktop);
+
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.card-header {
+    width: 100%;
+    height: 32%;
+    /* height: 160px; */
+}
+
+.card-body,
+.card-footer {
+    width: 100%;
+    padding: 35px;
+}
+
+.card-body {
+    height: 48%;
+}
+
+.card-footer {
+    height: 20%;
+    border-radius: 0 0 10px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header img {
+    max-width: 100%;
+    max-height: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body h1 {
+    color: var(--Darkblue);
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    color: var(--Desaturatedblue);
+    text-align: center;
+    font-size: var(--FontSize_paragraph);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+    background-color: var(--Verypaleblue);
+    border-radius: 10px;
+
+}
+
+.price .icon {
+    background-color: var(--Paleblue);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.icon img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.price-details h3 {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--Darkblue);
+    margin-bottom: 5px;
+}
+
+.price-details p {
+    color: var(--Desaturatedblue);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    /* margin-bottom: 15px; */
+}
+
+.price a {
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    color: var(--Brightblue);
+}
+
+.price a:hover {
+    text-decoration: none;
+    color: var(--Hoverblue);
+}
+
+.card-footer button:first-child {
+    background-color: var(--Brightblue);
+    color: #fff;
+    padding: 10px 10px;
+    width: 100%;
+    border: 1px solid var(--Brightblue);
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.card-footer button:first-child:hover {
+    background-color: var(--Hoverblue);
+    border: 1px solid var(--Hoverblue);
+}
+
+.card-footer button:last-child {
+    background: none;
+    color: var(--Desaturatedblue);
+    padding: 10px 10px;
+    width: 100%;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card-footer button:last-child:hover {
+    color: var(--Darkblue);
+    font-weight: bolder;
+}
+
+
+@media screen and (max-width:375) {
+    .card {
+        width: 100%;
+    }
 }
